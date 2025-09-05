@@ -40,13 +40,15 @@ a {
 }
 .btn {
   font-size: 17px;
-  font-weight: 500;
+  font-weight: 400;
   border-radius: 6px;
   padding: 9px 30px 8px;
   display: inline-block;
   text-decoration: none;
   line-height: 1;
   transition: all 0.3s;
+  text-align: center;
+  cursor: pointer;
 }
 .btn--accent {
   color: #fff;
@@ -55,6 +57,16 @@ a {
 }
 .btn--accent:hover {
   opacity: 0.88;
+}
+.btn--accent-dark {
+  color: #1e1715;
+  background-color: white;
+  border: 2px solid white;
+}
+.btn--accent-dark:hover {
+  color: white;
+  background-color: #ee362f;
+  border-color: #ee362f;
 }
 .btn--outline {
   color: #1e1715;
@@ -65,8 +77,18 @@ a {
   color: white;
   background-color: #1e1715;
 }
+.btn--outline-dark {
+  border: 2px solid white;
+  color: white;
+  background-color: transparent;
+}
+.btn--outline-dark:hover {
+  color: #1e1715;
+  background-color: white;
+}
 .btn--lg {
   font-size: 18px;
+  font-weight: 500;
   padding: 17px 30px 16px;
 }
 
@@ -150,17 +172,7 @@ a {
 }
 
 .nav__login-btn {
-  font-size: 14px;
-  font-family: inherit;
-  line-height: 1;
-  display: inline-block;
   margin-top: 30px;
-  padding: 6px 26px;
-  border: 2px solid #1e1715;
-  text-decoration: none;
-  color: var(--black);
-  background-color: transparent;
-  border-radius: 6px;
 }
 /* Overlay styles */
 .header__overlay {
@@ -241,8 +253,6 @@ a {
     font-weight: 300;
   }
   .nav__login-btn {
-    font-size: 17px;
-    padding: 10px 26px 9px;
     min-width: fit-content;
     margin-top: 0;
   }
@@ -264,7 +274,7 @@ a {
   min-width: 100vw;
   background: #fff;
   border-radius: 0 0 10px 10px;
-  box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 100px 40px 0 rgba(0, 0, 0, 0.08);
   border-top: 1px solid #e8e7e7;
   padding-top: 54px;
   padding-bottom: 62px;
@@ -327,6 +337,10 @@ a {
   background: #f8f8f8;
   padding: 75px 21px 21px 21px;
   border-radius: 10px;
+  transition: background 150ms ease-out;
+}
+.dropdown__card:hover {
+  background-color: #ffe1d0;
 }
 
 .dropdown__card-title {
@@ -394,17 +408,7 @@ a {
 }
 
 .footer-top__button {
-  display: inline-block;
-  font-size: 18px;
-  font-weight: 500;
-  color: white;
-  background-color: transparent;
-  border: 2px solid white;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
   margin-top: 40px;
-  padding: 19px 30px 18px;
 }
 .footer-top__nav {
   display: flex;
@@ -463,6 +467,9 @@ a {
   font-size: 14px;
   font-weight: 200;
   margin-top: 44px;
+}
+.footer-bottom__copyright p {
+  font-size: 14px;
 }
 .footer-bottom__social a {
   color: #000;

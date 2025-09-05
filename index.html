@@ -162,7 +162,7 @@
             <li class="nav__item"><a href="#pricing" class="nav__link">Pricing</a></li>
             <li class="nav__item"><a href="#" data-modal-target="#demo-modal" class="nav__link">Schedule a Demo</a></li>
           </ul>
-          <button class="nav__login-btn" data-modal-target="#login-modal" id="open-modal-btn">Log In</button>
+          <button class="nav__login-btn btn btn--outline" data-modal-target="#login-modal" id="open-modal-btn">Log In</button>
         </nav>
 
         <div class="header__overlay"></div>
@@ -195,7 +195,7 @@
           <!-- CTA Buttons -->
           <div class="hero__actions">
             <a href="#" class="hero__btn btn btn--accent btn--lg" data-modal-target="#demo-modal">Schedule a Demo</a>
-            <a href="#" class="hero__btn btn btn--outline btn--lg">Watch the Video</a>
+            <a href="#video" class="hero__btn btn btn--outline btn--lg">Watch the Video</a>
           </div>
 
           <div class="hero-bg">
@@ -703,7 +703,7 @@
                 <li class="pricing__features-item">Track inventory across multiple teams</li>
                 <li class="pricing__features-item">Affordable pricing with no IT setup required</li>
               </ul>
-              <a data-modal-target="#demo-modal" class="pricing__cta">Book Your Demo Now</a>
+              <a data-modal-target="#demo-modal" class="pricing__cta btn btn--outline btn--lg">Book Your Demo Now</a>
             </div>
 
             <!-- Schools Plan -->
@@ -724,7 +724,7 @@
                 <li class="pricing__features-item">Custom tags and filters for gear, sizes and conditions</li>
                 <li class="pricing__features-item">Support for district-level reporting and compliance</li>
               </ul>
-              <a class="pricing__cta pricing__cta--schools" data-modal-target="#demo-modal">Book Your Demo Now</a>
+              <a class="pricing__cta btn btn--lg btn--accent-dark pricing__cta--schools" data-modal-target="#demo-modal">Book Your Demo Now</a>
             </div>
 
             <!-- Districts Plan -->
@@ -743,7 +743,7 @@
                 <li class="pricing__features-item">Flexible licensing across schools</li>
                 <li class="pricing__features-item">Full service setup</li>
               </ul>
-              <a href="#" class="pricing__cta pricing__cta--contact" data-modal-target="#demo-modal">Book Your Demo Now</a>
+              <a href="#" class="pricing__cta btn btn--outline btn--lg" data-modal-target="#demo-modal">Book Your Demo Now</a>
             </div>
           </div>
         </div>
@@ -869,7 +869,7 @@
             <img src="./assets/images/gearlocker-logo.svg" alt="gearlocker logo" class="footer-top__logo" />
 
             <p class="footer-top__description">Real-time inventory, check-outs, purchase requests, and more - purpose-built for high school activities directors and coaches.</p>
-            <a data-modal-target="#demo-modal" class="footer-top__button">Schedule a Demo</a>
+            <a data-modal-target="#demo-modal" class="footer-top__button btn btn--outline-dark btn--lg">Schedule a Demo</a>
             <div class="footer-top__nav">
               <a href="./security.html">Security Practices</a>
               <a href="./pricing.html">Pricing</a>
@@ -1022,6 +1022,9 @@
           1200: {
             slidesPerView: 3.1,
             spaceBetween: 40,
+          },
+          1700: {
+            slidesPerView: 4,
           },
         },
       });
