@@ -16,6 +16,9 @@
 
     <link rel="preconnect" href="https://use.typekit.net/" />
     <link rel="stylesheet" href="https://use.typekit.net/jys7hta.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <link rel="stylesheet" href="./assets/css/global.css" />
     <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
@@ -40,12 +43,126 @@
             <img src="./assets/images/logo.svg" alt="GearLocker Logo" />
           </a>
           <ul class="nav__list">
-            <li class="nav__item"><a href="#features" class="nav__link">Features</a></li>
+            <li class="nav__item nav__item--dropdown">
+              <a class="nav__link nav__link--dropdown">Features</a>
+
+              <!-- Dropdown -->
+              <div class="dropdown" id="features-dropdown">
+                <div class="container">
+                  <div class="dropdown__tabs">
+                    <h3>Key Features</h3>
+                    <button class="dropdown__tab dropdown__tab--active" data-tab="inventory">Track Inventory</button>
+                    <button class="dropdown__tab" data-tab="issue">Issue Gear</button>
+                    <button class="dropdown__tab" data-tab="request">Request Gear</button>
+                    <button class="dropdown__tab" data-tab="visibility">Gain Visibility</button>
+                  </div>
+
+                  <div class="dropdown__content">
+                    <!-- Inventory -->
+                    <div class="dropdown__panel dropdown__panel--active" id="inventory">
+                      <div class="dropdown__card">
+                        <img src="./assets/images/import-icon.svg" alt="" class="dropdown__card-icon" />
+                        <h4 class="dropdown__card-title">Easy Import</h4>
+                        <p class="dropdown__card-text">Use our Excel template or CSV import to get all your items into GearLocker in seconds.</p>
+                      </div>
+                      <div class="dropdown__card">
+                        <img src="./assets/images/add-photos-icon.svg" alt="" class="dropdown__card-icon" />
+                        <h4 class="dropdown__card-title">Add Photos</h4>
+                        <p class="dropdown__card-text">Upload an image per item—uniform, helmet, etc.—so coaches know exactly what to issue.</p>
+                      </div>
+                      <div class="dropdown__card">
+                        <img src="./assets/images/smart-categories-icon.svg" alt="" class="dropdown__card-icon" />
+                        <h4 class="dropdown__card-title">Categorize</h4>
+                        <p class="dropdown__card-text">Organize by sport, season, size, or custom tags for quick filtering.</p>
+                      </div>
+                      <div class="dropdown__card">
+                        <img src="./assets/images/audit-icon.svg" alt="" class="dropdown__card-icon" />
+                        <h4 class="dropdown__card-title">History Tracking</h4>
+                        <p class="dropdown__card-text">See at-a-glance who added or changed an item and when—team-level audit trail built in.</p>
+                      </div>
+                    </div>
+
+                    <!-- Issue -->
+                    <div class="dropdown__panel" id="issue">
+                      <div class="dropdown__card">
+                        <img src="./assets/images/search-icon.svg" alt="" class="dropdown__card-icon" />
+                        <h4 class="dropdown__card-title">Quick Assign</h4>
+                        <p class="dropdown__card-text">Search by name, jersey number, or ID tag to issue multiple items at once.</p>
+                      </div>
+                      <div class="dropdown__card">
+                        <img src="./assets/images/views-icon.png" alt="" class="dropdown__card-icon" />
+                        <h4 class="dropdown__card-title">Team & Player Views</h4>
+                        <p class="dropdown__card-text">Coaches can see rosters, gear status, and swap between their teams in seconds.</p>
+                      </div>
+                      <div class="dropdown__card">
+                        <img src="./assets/images/tracking-icon.svg" alt="" class="dropdown__card-icon" />
+                        <h4 class="dropdown__card-title">Condition Tracking</h4>
+                        <p class="dropdown__card-text">Record the state of each item at checkout to ensure accountability on return.</p>
+                      </div>
+                      <div class="dropdown__card">
+                        <img src="./assets/images/smart-categories-icon.svg" alt="" class="dropdown__card-icon" />
+                        <h4 class="dropdown__card-title">Bulk Issue</h4>
+                        <p class="dropdown__card-text">Hand out an entire set of gear to a player or batch-assign items to a whole team.</p>
+                      </div>
+                    </div>
+
+                    <!-- Request -->
+                    <div class="dropdown__panel" id="request">
+                      <div class="dropdown__card">
+                        <img src="./assets/images/setting-icon.svg" alt="" class="dropdown__card-icon" />
+                        <h4 class="dropdown__card-title">Condition Reports</h4>
+                        <p class="dropdown__card-text">Filter by “needs repair” or “replace” to plan upcoming orders.</p>
+                      </div>
+                      <div class="dropdown__card">
+                        <img src="./assets/images/history-icon.svg" alt="" class="dropdown__card-icon" />
+                        <h4 class="dropdown__card-title">Equity & Compliance</h4>
+                        <p class="dropdown__card-text">Compare purchase history across teams to ensure fair distribution of resources.</p>
+                      </div>
+                      <div class="dropdown__card">
+                        <img src="./assets/images/alert-icon.svg" alt="" class="dropdown__card-icon" />
+                        <h4 class="dropdown__card-title">Missing & Overdue Alerts</h4>
+                        <p class="dropdown__card-text">See which players haven’t returned items and send parent notifications with one click.</p>
+                      </div>
+                      <div class="dropdown__card">
+                        <img src="./assets/images/archive.svg" alt="" class="dropdown__card-icon" />
+                        <h4 class="dropdown__card-title">Historical Archive</h4>
+                        <p class="dropdown__card-text">Track retired items and graduating players for complete year-over-year history.</p>
+                      </div>
+                    </div>
+
+                    <!-- Visibility -->
+                    <div class="dropdown__panel" id="visibility">
+                      <div class="dropdown__card">
+                        <img src="./assets/images/purchase-req-icon.svg" alt="" class="dropdown__card-icon" />
+                        <h4 class="dropdown__card-title">Purchase Requests</h4>
+                        <p class="dropdown__card-text">Coaches submit detailed requests with item links, quantities, and costs.</p>
+                      </div>
+                      <div class="dropdown__card">
+                        <img src="./assets/images/forecasting-icon.svg" alt="" class="dropdown__card-icon" />
+                        <h4 class="dropdown__card-title">Forecasting Tools</h4>
+                        <p class="dropdown__card-text">Use current condition and roster sizes to predict future needs.</p>
+                      </div>
+                      <div class="dropdown__card">
+                        <img src="./assets/images/live-budgets-icon.svg" alt="" class="dropdown__card-icon" />
+                        <h4 class="dropdown__card-title">Live Budgets</h4>
+                        <p class="dropdown__card-text">Push program budgets into GearLocker and watch them update automatically as purchases are approved.</p>
+                      </div>
+                      <div class="dropdown__card">
+                        <img src="./assets/images/budget-types-icon.svg" alt="" class="dropdown__card-icon" />
+                        <h4 class="dropdown__card-title">Multiple Budget Types</h4>
+                        <p class="dropdown__card-text">Manage rollover and fixed budgets with ease.</p>
+                      </div>
+                    </div>
+                    <div><a href="#" class="learn__more">Learn More</a></div>
+                  </div>
+                </div>
+              </div>
+            </li>
             <li class="nav__item"><a href="#features" class="nav__link">How It Works</a></li>
             <li class="nav__item"><a href="#pricing" class="nav__link">Pricing</a></li>
-            <li class="nav__item"><a href="https://calendly.com/cnabity/gearlocker-demo" class="nav__link">Schedule a Demo</a></li>
+            <li class="nav__item"><a href="#" data-modal-target="#demo-modal" class="nav__link">Schedule a Demo</a></li>
           </ul>
-          <button class="nav__login-btn" id="open-modal-btn">Log In</button>
+          <button class="nav__login-btn" data-modal-target="#login-modal" id="open-modal-btn">Log In</button>
         </nav>
 
         <div class="header__overlay"></div>
@@ -77,61 +194,461 @@
 
           <!-- CTA Buttons -->
           <div class="hero__actions">
-            <a href="#" class="hero__btn btn btn--accent btn--lg">Schedule a Demo</a>
+            <a href="#" class="hero__btn btn btn--accent btn--lg" data-modal-target="#demo-modal">Schedule a Demo</a>
             <a href="#" class="hero__btn btn btn--outline btn--lg">Watch the Video</a>
           </div>
 
-          <!-- Hero Image -->
-          <div class="hero__image-wrapper">
-            <picture>
-              <source media="(min-width: 1024px)" srcset="./assets/images/hero-desktop.png 1x, ./assets/images/hero-desktop-2x.png 2x" type="image/png" />
-              <source srcset="./assets/images/hero-phone.png 1x, ./assets/images/hero-phone-2x.png 2x" type="image/png" />
+          <div class="hero-bg">
+            <!-- Hero Image -->
+            <div class="hero__image-wrapper">
+              <picture>
+                <source media="(min-width: 1024px)" srcset="./assets/images/hero-desktop.png 1x, ./assets/images/hero-desktop-2x.png 2x" type="image/png" />
+                <source srcset="./assets/images/hero-phone.png 1x, ./assets/images/hero-phone-2x.png 2x" type="image/png" />
+                <img src="images/mobile-image@1x.png" alt="" loading="lazy" />
+              </picture>
+            </div>
 
-              <!-- Fallback -->
-              <img src="images/mobile-image@1x.png" alt="" loading="lazy" />
-            </picture>
+            <!-- Bottom Stats -->
+            <div class="hero__stats">
+              <p>
+                <span class="hero__stats-highlight">217 programs</span> manage <span class="hero__stats-highlight">29,483 pieces of gear</span> across
+                <span class="hero__stats-highlight">9,593 athletes and students</span> with GearLocker
+              </p>
+            </div>
+
+            <!-- Slider main container -->
+            <div class="swiper__container">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide">
+                    <div class="card testimonial">
+                      <img src="./assets/images/w-logo.jpg" alt="Logo" class="card__logo" />
+                      <p class="testimonial__quote">
+                        "With GearLocker, we’re no longer scrambling at the end of each season to figure out what’s missing. It’s become an essential part of how we operate."
+                      </p>
+                      <div class="testimonial__cite">
+                        <img src="./assets/images/avatar-1.jpg" alt="" class="testimonial__cite__avatar" width="36" height="36" />
+                        <div>
+                          <h3 class="testimonial__cite__name">Tom Kerkman</h3>
+                          <p class="testimonial__cite__title">Athletic Director, Westside High School</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card testimonial">
+                      <img src="./assets/images/elkhorn-logo.jpg" alt="Logo" class="card__logo" />
+                      <p class="testimonial__quote">"We used to deal with constant gear mix-ups. Now we know who has what, and when we need to replace it."</p>
+                      <div class="testimonial__cite">
+                        <img src="./assets/images/avatar.png" alt="" class="testimonial__cite__avatar" width="36" height="36" />
+                        <div>
+                          <h3 class="testimonial__cite__name">Dan Fellman</h3>
+                          <p class="testimonial__cite__title">Wrestling Coach, Elkhorn South High School</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card testimonial">
+                      <img src="./assets/images/school-logo-2.jpg" alt="Logo" class="card__logo" />
+                      <p class="testimonial__quote">"Our gear needs are just as complex as sports. GearLocker gave us the structure to manage hundreds of instruments, cases, and stands."</p>
+                      <div class="testimonial__cite">
+                        <img src="./assets/images/avatar.png" alt="" class="testimonial__cite__avatar" width="36" height="36" />
+                        <div>
+                          <h3 class="testimonial__cite__name">Hunter Boe</h3>
+                          <p class="testimonial__cite__title">Band Director, Standing Bear High School</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card testimonial">
+                      <img src="./assets/images/w-logo.jpg" alt="Logo" class="card__logo" />
+                      <p class="testimonial__quote">
+                        "Between competitions, rehearsals, and hundreds of moving parts, we needed a better system. GearLocker gave us total visibility and peace of mind."
+                      </p>
+                      <div class="testimonial__cite">
+                        <img src="./assets/images/avatar-1.jpg" alt="" class="testimonial__cite__avatar" width="36" height="36" />
+                        <div>
+                          <h3 class="testimonial__cite__name">Keith Schoening</h3>
+                          <p class="testimonial__cite__title">Marching Band Director, Westside High School</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card testimonial">
+                      <img src="./assets/images/w-logo.jpg" alt="Logo" class="card__logo" />
+                      <p class="testimonial__quote">"I used to dread uniform handouts - too much guesswork. Now it takes minutes and the players know exactly what they’ve got."</p>
+                      <div class="testimonial__cite">
+                        <img src="./assets/images/Mike-Leapley.jpg" alt="" class="testimonial__cite__avatar" width="36" height="36" />
+                        <div>
+                          <h3 class="testimonial__cite__name">Mike Leapley</h3>
+                          <p class="testimonial__cite__title">Girls Softball Coach, Westside High School</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card testimonial">
+                      <img src="./assets/images/school-logo-3.jpg" alt="Logo" class="card__logo" />
+                      <p class="testimonial__quote">"Every piece of gear is tracked and accounted for. GearLocker helped us stay organized from day one of the season."</p>
+                      <div class="testimonial__cite">
+                        <img src="./assets/images/Jeff-Rutledge.jpg" alt="" class="testimonial__cite__avatar" width="36" height="36" />
+                        <div>
+                          <h3 class="testimonial__cite__name">Jeff Rutledge</h3>
+                          <p class="testimonial__cite__title">Wrestling Coach, Lincoln East High School</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card testimonial">
+                      <img src="./assets/images/elkhorn-logo.jpg" alt="Logo" class="card__logo" />
+                      <p class="testimonial__quote">"Managing over a thousand locks and combinations was overwhelming. GearLocker made it effortless."</p>
+                      <div class="testimonial__cite">
+                        <img src="./assets/images/Roger-Ortmeier.jpg" alt="" class="testimonial__cite__avatar" width="36" height="36" />
+                        <div>
+                          <h3 class="testimonial__cite__name">Roger Ortmeier</h3>
+                          <p class="testimonial__cite__title">Athletic Director, Elkhorn South High School</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card testimonial">
+                      <img src="./assets/images/school-logo-3.jpg" alt="Logo" class="card__logo" />
+                      <p class="testimonial__quote">"We finally have a consistent system that works across all our teams. GearLocker scaled with us and simplified everything."</p>
+                      <div class="testimonial__cite">
+                        <img src="./assets/images/Zach-Limbach.jpg" alt="" class="testimonial__cite__avatar" width="36" height="36" />
+                        <div>
+                          <h3 class="testimonial__cite__name">Zach Limbach</h3>
+                          <p class="testimonial__cite__title">Athletic Director, Lincoln East High School</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card testimonial">
+                      <img src="./assets/images/w-logo.jpg" alt="Logo" class="card__logo" />
+                      <p class="testimonial__quote">"Tracking our tennis equipment across multiple levels used to be chaotic. GearLocker gave us clarity and control."</p>
+                      <div class="testimonial__cite">
+                        <img src="./assets/images/avatar.png" alt="" class="testimonial__cite__avatar" width="36" height="36" />
+                        <div>
+                          <h3 class="testimonial__cite__name">Bart Jeseritz</h3>
+                          <p class="testimonial__cite__title">Men’s Tennis Coach, Westside High School</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card testimonial">
+                      <img src="./assets/images/school-logo-4.jpg" alt="Logo" class="card__logo" />
+                      <p class="testimonial__quote">"GearLocker makes it easy to manage across different sites, tournaments, and seasons. It’s the most consistent tool we’ve adopted."</p>
+                      <div class="testimonial__cite">
+                        <img src="./assets/images/avatar.png" alt="" class="testimonial__cite__avatar" width="36" height="36" />
+                        <div>
+                          <h3 class="testimonial__cite__name">Ryan Bauer</h3>
+                          <p class="testimonial__cite__title">Wrestling Coach, Kearney High School</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
           </div>
-
-          <!-- Bottom Stats -->
-          <!-- <div class="hero__stats">
-            <p>
-              <span class="hero__stats-highlight">217 programs</span> manage <span class="hero__stats-highlight">29,483 pieces of gear</span> across
-              <span class="hero__stats-highlight">9,593 athletes and students</span> with GearLocker
-            </p>
-          </div> -->
         </div>
       </section>
 
-      <!-- Benefits Section -->
-      <section class="benefits">
+      <!--  Features ========================== -->
+      <section class="features">
         <div class="container">
-          <div class="benefits__container">
-            <div class="benefits__item">
-              <div class="benefits__icon">
-                <img src="./assets/images/calendar.svg" alt="Track icon" />
-              </div>
-              <p class="benefits__description">Track who has what, and when it's due back, with just a few clicks.</p>
-            </div>
+          <h2 class="features__title">From Chaos to Clarity - All in One Platform</h2>
+          <p class="features__subtitle">
+            GearLocker replaces scattered spreadsheets with one connected system for your entire athletic department. Track what you own, assign it to the right people, and save money by staying on
+            top of every piece of gear.
+          </p>
 
-            <div class="benefits__item">
-              <div class="benefits__icon">
-                <img src="./assets/images/accountable.svg" alt="Accountability icon" />
-              </div>
-              <p class="benefits__description">Hold students accountable and reduce the cost of replacing lost items.</p>
+          <div class="tabs">
+            <div class="tabs__nav">
+              <button class="tabs__button tabs__button--active" data-tab="track">Track</button>
+              <button class="tabs__button" data-tab="assign">Assign</button>
+              <button class="tabs__button" data-tab="report">Report</button>
+              <button class="tabs__button" data-tab="budget">Budget</button>
             </div>
-
-            <div class="benefits__item">
-              <div class="benefits__icon">
-                <img src="./assets/images/realtime.svg" alt="Real-time icon" />
+          </div>
+          <div class="tabs__content">
+            <div class="tabs__panel tabs__panel--active" id="track">
+              <div class="features__content">
+                <div class="features__col">
+                  <div class="feature__header">
+                    <div class="feature__header__content">
+                      <h2 class="feature__header__title">All Your Gear in One Place - Instantly Searchable</h2>
+                      <p><strong>Stop chasing down spreadsheets.</strong></p>
+                      <p>GearLocker brings every program’s inventory into one clean, centralized dashboard.</p>
+                      <p>We’ll import your existing lists for you, add photos, and organize by sport, season, or size so you can see exactly what you own, who has it, and what shape it’s in.</p>
+                    </div>
+                    <div class="feature__header__image feature__header__image--1">
+                      <picture>
+                        <source srcset="./assets/images/add-new-gear-feature.png 1x, ./assets/images/add-new-gear-feature-2x.png 2x" type="image/png" />
+                        <img src="./assets/images/add-new-gear-feature.png" alt="Add new gear form" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="feature__card feature__card--1">
+                    <img src="./assets/images/add-photos.png" alt="" class="feature__card-img" />
+                    <div>
+                      <img src="./assets/images/add-photos-icon.svg" alt="" class="feature__card-icon" />
+                      <h3 class="feature__card-title">Add Photos</h3>
+                      <p class="feature__card-subtitle">Snap or upload images so coaches and players know exactly what’s being issued.</p>
+                    </div>
+                  </div>
+                  <div class="feature__card">
+                    <img src="./assets/images/smart-categories.svg" alt="" class="feature__card-img" />
+                    <div>
+                      <img src="./assets/images/smart-categories-icon.svg" alt="" class="feature__card-icon" />
+                      <h3 class="feature__card-title">Smart Categories</h3>
+                      <p class="feature__card-subtitle">Organize by sport, season, size, or custom tags (e.g., “varsity,” “women’s”) for quick filtering.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="features__col">
+                  <div class="feature__card">
+                    <img src="./assets/images/concierge-report.svg" alt="" class="feature__card-img" />
+                    <div>
+                      <img src="./assets/images/import-icon.svg" alt="" class="feature__card-icon" />
+                      <h3 class="feature__card-title">Concierge Import</h3>
+                      <p class="feature__card-subtitle">Share your Google Sheet or Excel file — we’ll load everything into GearLocker for you.</p>
+                    </div>
+                  </div>
+                  <div class="feature__card">
+                    <img src="./assets/images/audit.svg" alt="" class="feature__card-img" />
+                    <div>
+                      <img src="./assets/images/audit-icon.svg" alt="" class="feature__card-icon" />
+                      <h3 class="feature__card-title">Full Audit Trail</h3>
+                      <p class="feature__card-subtitle">See who added, updated, or checked in/out an item, with date-stamped history built in.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <p class="benefits__description">Keep a real-time source of truth for all school-owned property across teams and departments.</p>
             </div>
-
-            <div class="benefits__item">
-              <div class="benefits__icon">
-                <img src="./assets/images/returned.svg" alt="Return icon" />
+            <div class="tabs__panel" id="assign">
+              <div class="features__content">
+                <div class="features__col">
+                  <div class="feature__header">
+                    <div class="feature__header__content">
+                      <h2 class="feature__header__title">Get the Right Gear to the Right People — Fast</h2>
+                      <p><strong>No more chaotic check-out days or mystery gear piles.</strong></p>
+                      <p>
+                        GearLocker makes issuing equipment as simple as a few clicks — whether you’re outfitting an entire football roster or checking out a single track hurdle. Assign items to
+                        individual players or keep them marked as team-use, track their condition, and know exactly where every piece lives from day one.
+                      </p>
+                    </div>
+                    <div class="feature__header__image feature__header__image--2">
+                      <picture>
+                        <source srcset="./assets/images/gears.png 1x, ./assets/images/gears-2x.png 2x" type="image/png" />
+                        <img src="./assets/images/gears.png" alt="Gears" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="feature__card feature__card--2">
+                    <img src="./assets/images/quick-search.png" alt="" class="feature__card-img feature__card-img--search" />
+                    <div>
+                      <img src="./assets/images/search-icon.svg" alt="" class="feature__card-icon" />
+                      <h3 class="feature__card-title">Quick Assign</h3>
+                      <p class="feature__card-subtitle">Search by name, jersey number, or ID tag to issue multiple items at once.</p>
+                    </div>
+                  </div>
+                  <div class="feature__card">
+                    <img src="./assets/images/views.png" alt="" class="feature__card-img" />
+                    <div>
+                      <img src="./assets/images/views-icon.png" alt="" class="feature__card-icon" />
+                      <h3 class="feature__card-title">Team & Player Views</h3>
+                      <p class="feature__card-subtitle">Coaches can see rosters, gear status, and swap between their teams in seconds.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="features__col">
+                  <div class="feature__card">
+                    <img src="./assets/images/gear-history.png" alt="" class="feature__card-img feature__card-img--1" />
+                    <div>
+                      <img src="./assets/images/tracking-icon.svg" alt="" class="feature__card-icon" />
+                      <h3 class="feature__card-title">Condition Tracking</h3>
+                      <p class="feature__card-subtitle">Record the state of each item at checkout to ensure accountability on return.</p>
+                    </div>
+                  </div>
+                  <div class="feature__card">
+                    <img src="./assets/images/bulk-issue.png" alt="" class="feature__card-img feature__card-img--bulk" />
+                    <div>
+                      <img src="./assets/images/smart-categories-icon.svg" alt="" class="feature__card-icon" />
+                      <h3 class="feature__card-title">Bulk Issue</h3>
+                      <p class="feature__card-subtitle">Hand out an entire set of gear to a player or batch-assign items to a whole team.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <p class="benefits__description">Ensure that all gear is returned, reducing the need for costly replacements.</p>
+            </div>
+            <div class="tabs__panel" id="report">
+              <div class="features__content">
+                <div class="features__col">
+                  <div class="feature__header">
+                    <div class="feature__header__content">
+                      <h2 class="feature__header__title">Instant Accountability, Actionable Insights</h2>
+                      <p><strong>Forget the guesswork. </strong></p>
+                      <p>
+                        GearLocker turns your raw inventory data into clear, actionable reports — from missing items and damaged gear to purchase cycles and equity across programs. Whether you need to
+                        prep for an end-of-year coach meeting or show the district exactly what you own, the answers are already at your fingertips.
+                      </p>
+                    </div>
+                    <div class="feature__header__image feature__header__image--3">
+                      <picture>
+                        <source srcset="./assets/images/gear-report.png 1x, ./assets/images/gear-report-2x.png 2x" type="image/png" />
+                        <img src="./assets/images/gear-report.png" alt="Gears" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="feature__card feature__card--3">
+                    <img src="./assets/images/condition-reports.png" alt="" class="feature__card-img feature__card-img--cond" />
+                    <div>
+                      <img src="./assets/images/setting-icon.svg" alt="" class="feature__card-icon" />
+                      <h3 class="feature__card-title">Condition Reports</h3>
+                      <p class="feature__card-subtitle">Filter by “needs repair” or “replace” to plan upcoming orders.</p>
+                    </div>
+                  </div>
+                  <div class="feature__card">
+                    <img src="./assets/images/compare.png" alt="" class="feature__card-img" />
+                    <div>
+                      <img src="./assets/images/history-icon.svg" alt="" class="feature__card-icon" />
+                      <h3 class="feature__card-title">Equity & Compliance</h3>
+                      <p class="feature__card-subtitle">Compare purchase history across teams to ensure fair distribution of resources.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="features__col">
+                  <div class="feature__card">
+                    <img src="./assets/images/alerts.png" alt="" class="feature__card-img" />
+                    <div>
+                      <img src="./assets/images/alert-icon.svg" alt="" class="feature__card-icon" />
+                      <h3 class="feature__card-title">Missing & Overdue Alerts</h3>
+                      <p class="feature__card-subtitle">See which players haven’t returned items and send parent notifications with one click.</p>
+                    </div>
+                  </div>
+                  <div class="feature__card">
+                    <img src="./assets/images/history-archive.png" alt="" class="feature__card-img feature__card-img--arch" />
+                    <div>
+                      <img src="./assets/images/archive.svg" alt="" class="feature__card-icon" />
+                      <h3 class="feature__card-title">Historical Archive</h3>
+                      <p class="feature__card-subtitle">Track retired items and graduating players for complete year-over-year history.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tabs__panel" id="budget">
+              <div class="features__content">
+                <div class="features__col">
+                  <div class="feature__header">
+                    <div class="feature__header__content">
+                      <h2 class="feature__header__title">Plan Smarter, Spend Wiser</h2>
+                      <p><strong>Budget meetings just got easier. </strong></p>
+                      <p>
+                        GearLocker connects real inventory data with purchase requests and budget forecasting so you can plan with precision. Know exactly what needs replacing, approve coach requests
+                        with a click, and see the impact on your live budget — all before spending a dollar.
+                      </p>
+                    </div>
+                    <div class="feature__header__image feature__header__image--3">
+                      <picture>
+                        <source srcset="./assets/images/budget-report.png 1x, ./assets/images/budget-report-2x.png 2x" type="image/png" />
+                        <img src="./assets/images/budget-report.png" alt="Gears" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="feature__card feature__card--3">
+                    <img src="./assets/images/purchase-request.png" alt="" class="feature__card-img feature__card-img--purch" />
+                    <div>
+                      <img src="./assets/images/purchase-req-icon.svg" alt="" class="feature__card-icon" />
+                      <h3 class="feature__card-title">Purchase Requests</h3>
+                      <p class="feature__card-subtitle">Coaches submit detailed requests with item links, quantities, and costs.</p>
+                    </div>
+                  </div>
+                  <div class="feature__card">
+                    <img src="./assets/images/forecasting.png" alt="" class="feature__card-img" />
+                    <div>
+                      <img src="./assets/images/forecasting-icon.svg" alt="" class="feature__card-icon" />
+                      <h3 class="feature__card-title">Forecasting Tools</h3>
+                      <p class="feature__card-subtitle">Use current condition and roster sizes to predict future needs.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="features__col">
+                  <div class="feature__card">
+                    <img src="./assets/images/live-budgets.png" alt="" class="feature__card-img feature__card-img--live" />
+                    <div>
+                      <img src="./assets/images/live-budgets-icon.svg" alt="" class="feature__card-icon" />
+                      <h3 class="feature__card-title">Live Budgets</h3>
+                      <p class="feature__card-subtitle">Push program budgets into GearLocker and watch them update automatically as purchases are approved.</p>
+                    </div>
+                  </div>
+                  <div class="feature__card">
+                    <img src="./assets/images/budget-types.png" alt="" class="feature__card-img" />
+                    <div>
+                      <img src="./assets/images/budget-types-icon.svg" alt="" class="feature__card-icon" />
+                      <h3 class="feature__card-title">Multiple Budget Types</h3>
+                      <p class="feature__card-subtitle">Manage rollover and fixed budgets with ease.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="features__link"><a href="#" class="features__link">See all features</a></p>
+        </div>
+      </section>
+
+      <section class="supported-gear">
+        <div class="container">
+          <div class="supported-gear__content supported-gear__content--mobile">
+            <p class="supported-gear__subtitle">What things can I put in GearLocker?</p>
+            <h2 class="supported-gear__title">From helmets to locks, GearLocker can manage anything.</h2>
+          </div>
+          <div class="supported-gear__wrapper">
+            <div class="supported-gear__content supported-gear__content--desktop">
+              <p class="supported-gear__subtitle">What things can I put in GearLocker?</p>
+              <h2 class="supported-gear__title">From helmets to locks, GearLocker can manage anything.</h2>
+            </div>
+            <div class="supported-gear__item supported-gear__item--1">
+              <img src="./assets/images/football-Jersey.png" alt="" />
+            </div>
+            <div class="supported-gear__item supported-gear__item--2">
+              <img src="./assets/images/gear-item-2.png" alt="" />
+            </div>
+            <div class="supported-gear__item supported-gear__item--3">
+              <img src="./assets/images/gear-item-3.png" alt="" />
+            </div>
+            <div class="supported-gear__item supported-gear__item--4">
+              <img src="./assets/images/gear-item-4.png" alt="" />
+            </div>
+            <div class="supported-gear__item supported-gear__item--5">
+              <img src="./assets/images/gear-item-5.png" alt="" />
+            </div>
+            <div class="supported-gear__item supported-gear__item--6">
+              <img src="./assets/images/gear-item-6.png" alt="" />
+            </div>
+            <div class="supported-gear__item supported-gear__item--7">
+              <img src="./assets/images/gear-item-7.png" alt="" />
+            </div>
+            <div class="supported-gear__item supported-gear__item--8">
+              <img src="./assets/images/gear-item-8.png" alt="" />
+            </div>
+            <div class="supported-gear__item supported-gear__item--9">
+              <img src="./assets/images/gear-item-9.png" alt="" />
+            </div>
+            <div class="supported-gear__item supported-gear__item--10">
+              <img src="./assets/images/gear-item-10.png" alt="" />
             </div>
           </div>
         </div>
@@ -186,7 +703,7 @@
                 <li class="pricing__features-item">Track inventory across multiple teams</li>
                 <li class="pricing__features-item">Affordable pricing with no IT setup required</li>
               </ul>
-              <a href="https://calendly.com/cnabity/gearlocker-demo" class="pricing__cta">Book Your Demo Now</a>
+              <a data-modal-target="#demo-modal" class="pricing__cta">Book Your Demo Now</a>
             </div>
 
             <!-- Schools Plan -->
@@ -207,7 +724,7 @@
                 <li class="pricing__features-item">Custom tags and filters for gear, sizes and conditions</li>
                 <li class="pricing__features-item">Support for district-level reporting and compliance</li>
               </ul>
-              <a href="https://calendly.com/cnabity/gearlocker-demo" class="pricing__cta pricing__cta--schools">Book Your Demo Now</a>
+              <a class="pricing__cta pricing__cta--schools" data-modal-target="#demo-modal">Book Your Demo Now</a>
             </div>
 
             <!-- Districts Plan -->
@@ -226,7 +743,7 @@
                 <li class="pricing__features-item">Flexible licensing across schools</li>
                 <li class="pricing__features-item">Full service setup</li>
               </ul>
-              <a href="https://calendly.com/cnabity/gearlocker-demo" class="pricing__cta pricing__cta--contact">Get in Touch</a>
+              <a href="#" class="pricing__cta pricing__cta--contact" data-modal-target="#demo-modal">Book Your Demo Now</a>
             </div>
           </div>
         </div>
@@ -352,11 +869,11 @@
             <img src="./assets/images/gearlocker-logo.svg" alt="gearlocker logo" class="footer-top__logo" />
 
             <p class="footer-top__description">Real-time inventory, check-outs, purchase requests, and more - purpose-built for high school activities directors and coaches.</p>
-            <a href="https://calendly.com/cnabity/gearlocker-demo" class="footer-top__button">Schedule a Demo</a>
+            <a data-modal-target="#demo-modal" class="footer-top__button">Schedule a Demo</a>
             <div class="footer-top__nav">
-              <a href="#">Security Practices</a>
-              <a href="#">Pricing</a>
-              <a href="#">Customers</a>
+              <a href="./security.html">Security Practices</a>
+              <a href="./pricing.html">Pricing</a>
+              <a href="./customers.html">Customers</a>
             </div>
           </div>
         </div>
@@ -373,8 +890,8 @@
               <a href="#" aria-label="LinkedIn"><img src="./assets/images/icon-linkedin.svg" alt="" /></a>
             </div>
             <div class="footer-bottom__links">
-              <a href="#">Terms and Conditions</a>
-              <a href="#">Privacy Policy</a>
+              <a href="./terms-and-conditions.html">Terms and Conditions</a>
+              <a href="./privacy-policy.html">Privacy Policy</a>
               <span>Sitemap <a href="#">HTML</a> | <a href="#">XML</a> </span>
             </div>
           </div>
@@ -382,10 +899,11 @@
       </div>
     </footer>
     <aside>
-      <!-- Modal -->
+      <!-- ============= Modal ============= -->
+      <!-- Login Modal ============= -->
       <div class="modal" id="login-modal">
         <div class="modal__content">
-          <span class="modal__close" id="close-modal-btn">&times;</span>
+          <span class="modal__close" data-close id="close-modal-btn">&times;</span>
           <div class="modal__body">
             <div class="modal__header">
               <img src="./assets/images/logo.svg" alt="Gearlocker Logo" class="modal__logo" />
@@ -402,8 +920,132 @@
           </div>
         </div>
       </div>
+      <!-- Demo Modal ================= -->
+      <div class="modal" id="demo-modal">
+        <div class="modal__content demo-modal">
+          <span class="modal__close" data-close>&times;</span>
+          <div class="demo-modal__body">
+            <!-- Left Column -->
+            <div class="demo-modal__left">
+              <h2 class="demo-modal__title">Get a demo of GearLocker</h2>
+              <p class="demo-modal__subtitle">See GearLocker in action and get your questions answered with one of our product experts.</p>
+
+              <div class="demo-modal__avatars">
+                <img src="./assets/images/avatars-group.png" srcset="./assets/images/avatars-group.png 1x, ./assets/images/avatars-group-2x.png 2x" alt="" />
+              </div>
+
+              <p class="demo-modal__benefits-title">We'll also make sure you leave with:</p>
+
+              <ul class="demo-modal__benefits">
+                <li class="demo-modal__benefit">
+                  <span><strong>Real-world tips</strong> on how to streamline gear and inventory management across teams</span>
+                </li>
+                <li class="demo-modal__benefit">
+                  <span><strong>Best practices</strong> from top-performing athletics organizations across the country</span>
+                </li>
+                <li class="demo-modal__benefit">
+                  <span><strong>A tailored walkthrough</strong> of how GearLocker can reduce equipment headaches and boost accountability</span>
+                </li>
+                <li class="demo-modal__benefit">
+                  <span><strong>A free GearLocker decal</strong>, if you mention this message :)</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Right Column (Form) -->
+            <div class="demo-modal__right">
+              <form class="demo-modal__form">
+                <div class="demo-modal__row">
+                  <div class="input__wrapper">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" class="demo-modal__input" required />
+                  </div>
+                  <div class="input__wrapper">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" class="demo-modal__input" placeholder="Last Name" required />
+                  </div>
+                </div>
+
+                <div class="demo-modal__row">
+                  <div class="input__wrapper">
+                    <label for="email">Work Email</label>
+                    <input type="email" id="email" class="demo-modal__input" required />
+                  </div>
+                  <div class="input__wrapper">
+                    <label for="org-type">Organization Type</label>
+                    <select class="demo-modal__input" id="orgtype">
+                      <option>Club & Youth Sports</option>
+                      <option>School</option>
+                      <option>University</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input__wrapper">
+                  <label for="textarea">Are there specific problems you're hoping to solve or any other details you'd like to share? (We'll tailor your demo accordingly!)</label>
+                  <textarea class="demo-modal__textarea" id="textarea" placeholder="Describe what you are trying to solve"></textarea>
+                </div>
+                <div class="input__wrapper">
+                  <label for="refer">How did you hear about GearLocker?</label>
+                  <select id="refer" class="demo-modal__input">
+                    <option value="">Please Select</option>
+                    <option>Referral</option>
+                    <option>Google</option>
+                    <option>Social Media</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+
+                <button type="submit" class="btn btn--accent btn--lg demo-modal__btn" href="https://calendly.com/cnabity/gearlocker-demo">Schedule Your Demo Now</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </aside>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/video.js"></script>
+    <script>
+      const swiper = new Swiper(".swiper", {
+        slidesPerView: 1.03,
+        spaceBetween: 10,
+
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        breakpoints: {
+          1024: {
+            slidesPerView: 2.1,
+            spaceBetween: 40,
+          },
+          1200: {
+            slidesPerView: 3.1,
+            spaceBetween: 40,
+          },
+        },
+      });
+    </script>
+    <script>
+      document.querySelectorAll(".tabs__button").forEach((button) => {
+        button.addEventListener("click", () => {
+          const tabId = button.dataset.tab;
+
+          // Remove active class from buttons
+          document.querySelectorAll(".tabs__button").forEach((btn) => btn.classList.remove("tabs__button--active"));
+
+          // Add active to clicked
+          button.classList.add("tabs__button--active");
+
+          // Hide all panels
+          document.querySelectorAll(".tabs__panel").forEach((panel) => {
+            panel.classList.remove("tabs__panel--active");
+          });
+
+          // Show target panel
+          document.getElementById(tabId).classList.add("tabs__panel--active");
+        });
+      });
+    </script>
   </body>
 </html>
