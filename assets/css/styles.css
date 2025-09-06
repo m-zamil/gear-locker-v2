@@ -251,6 +251,7 @@
   margin-left: 30px;
   margin-right: 30px;
   margin-bottom: 10px;
+  overflow-x: auto;
 }
 
 .tabs__button {
@@ -266,8 +267,8 @@
   cursor: pointer;
   transition: all 0.3s ease;
 
-  flex-shrink: 0;
-  flex-basis: 120px;
+  min-width: 120px;
+  display: inline-block;
 }
 
 .tabs__button--active {
@@ -294,7 +295,7 @@
 }
 @media (min-width: 1024px) {
   .tabs__button {
-    flex-basis: 90px;
+    min-width: 90px;
   }
   .tabs__content {
     margin-top: 30px;
